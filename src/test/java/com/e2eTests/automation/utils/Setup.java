@@ -39,7 +39,7 @@ public class Setup {
 	
 	case "chrome":
 		ChromeOptions chromeOptions=new ChromeOptions();
-		chromeOptions.addArguments("['start-maximased']");
+		chromeOptions.addArguments("start-maximased");
 		driver=new ChromeDriver(chromeOptions);
 		break;
 	
