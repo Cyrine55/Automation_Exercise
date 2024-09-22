@@ -22,14 +22,25 @@ public class LoginPage extends BasePage{
 	@FindBy(how = How.XPATH, using = "//button[normalize-space()='Signup']")
 	private static WebElement signupBtn;
 	
+	@FindBy(how = How.XPATH, using = "//h2[normalize-space()='Login to your account']")
+	private static WebElement loginToAccountText;
+	@FindBy(how = How.XPATH, using = "//input[@data-qa='login-email']")
+	private static WebElement emailadressInput;
+	@FindBy(how = How.XPATH, using = "//input[@placeholder='Password']")
+	private static WebElement passwordInput;
+	@FindBy(how = How.XPATH, using = "//button[normalize-space()='Login']")
+	private static WebElement loginBtn;
+	
 
 /* Constructor */
 	
 	public SeleniumUtils seleniumUtils;
+
 	
 	public LoginPage() {
 		super(Setup.getDriver());
 		seleniumUtils = new SeleniumUtils();
+		
 	}
 	
 	public String getVerifyText() {
@@ -47,4 +58,27 @@ public class LoginPage extends BasePage{
 	public void clickOnSignUp() {
 		seleniumUtils.click(signupBtn);
 	}
+	
+	public String getVerifyAccountText() {
+		return seleniumUtils.readText(loginToAccountText);
+	}
+	String adresseMail = "yefrni.syrinetest@gmail.com";
+	String password = "Yefrni5";
+	public void enterEmailAdress() {
+		seleniumUtils.writeText(emailadressInput,adresseMail);	
+	}
+	public void enterPassword() {
+		seleniumUtils.writeText(passwordInput,password);	
+	}
+	
+	public void clickLogin() {
+		seleniumUtils.click(loginBtn);
+	}
+	
+	public void enterIncorrectEmail(String emailInvalid ) {
+		seleniumUtils.writeText(emailadressInput, emailInvalid);
+		}
+	public void enterIncorrectMdp(String mdpInvalid ) {
+		seleniumUtils.writeText(passwordInput, mdpInvalid);
+		}
 }

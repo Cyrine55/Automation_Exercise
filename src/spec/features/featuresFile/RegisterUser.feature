@@ -9,7 +9,7 @@ Feature: Register user
     Then Click on Signup button
     And Verify "New User Signup!" is visible
     And Enter name "cyrine"
-    And Enter email "yefrni.syrinedlsv@gmail.com"
+    And Enter email "yefrni.syrinetest@gmail.com"
     And Click on Signupbutton
     And Verify that info "ENTER ACCOUNT INFORMATION" is visible
     And Choose the title
