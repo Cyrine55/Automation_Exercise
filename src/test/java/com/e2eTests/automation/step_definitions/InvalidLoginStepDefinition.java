@@ -1,5 +1,7 @@
 package com.e2eTests.automation.step_definitions;
 
+import org.junit.Assert;
+
 import com.e2eTests.automation.page_objects.LoginPage;
 import com.e2eTests.automation.utils.ConfigFileReader;
 import com.e2eTests.automation.utils.Validations;
@@ -27,8 +29,9 @@ public class InvalidLoginStepDefinition {
 	    
 	}
 	@Then("Verify error message {string} is visible")
-	public void verifyErrorMessageIsVisible(String string) {
-	
+	public void verifyErrorMessageIsVisible(String expectedErrorMsg) {
+	String actualErrorText=loginPage.geterrorInvalidMsg();
+	Assert.assertEquals(actualErrorText, expectedErrorMsg);
 	}
 
 

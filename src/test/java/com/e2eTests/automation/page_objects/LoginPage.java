@@ -31,6 +31,8 @@ public class LoginPage extends BasePage{
 	@FindBy(how = How.XPATH, using = "//button[normalize-space()='Login']")
 	private static WebElement loginBtn;
 	
+	@FindBy(how = How.XPATH, using = "//p[normalize-space()='Your email or password is incorrect!']")
+	private static WebElement invalidLoginErrorText;
 
 /* Constructor */
 	
@@ -81,4 +83,7 @@ public class LoginPage extends BasePage{
 	public void enterIncorrectMdp(String mdpInvalid ) {
 		seleniumUtils.writeText(passwordInput, mdpInvalid);
 		}
+	public String geterrorInvalidMsg(){
+		return seleniumUtils.readText(invalidLoginErrorText);
+	}
 }
