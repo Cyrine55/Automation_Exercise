@@ -5,7 +5,7 @@ Feature: Verificarion tous les détails du produit
 
  @All-Detail-Product
   Scenario: Vérifier liste des produits et détails
-   Given User navigates to the application
+  Given User navigates to the application
   And Verify that home page is visible successfully
   And Click on Product button
   Then Verify user is navigated to ALL PRODUCTS page successfully
