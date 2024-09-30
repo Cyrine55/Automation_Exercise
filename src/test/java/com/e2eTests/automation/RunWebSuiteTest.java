@@ -18,14 +18,14 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions(features = {"src/spec/features"},
                  plugin = {"pretty", "html:target/cucumber-report.html", "json:target/cucumber.json"}, 
-                 tags = ("@Search-product"), 
+                 tags = ("@Add-Product-In-Cart"), 
                  //glue = {"step_definitions"},
                  monochrome = false, 
                  snippets = CAMELCASE
 
 )
 /**
- * This class is ised to run the test,which is JUinit Test Runner Class
+ * This class is used to run the test,which is JUinit Test Runner Class
  * containing the Step Definition location and the other primary data requiered to run the test 
  * */
 
