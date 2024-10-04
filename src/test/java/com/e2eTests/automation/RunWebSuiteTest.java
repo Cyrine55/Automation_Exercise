@@ -16,9 +16,9 @@ import org.junit.runner.RunWith;
  * files,stepdefinitions,reporting integration
  */
 
-@CucumberOptions(features = {"src/spec/features"},
+@CucumberOptions(features = {"src/spec/features/featuresFile/AddProductInCart.feature", "src/spec/features/featuresFile/VerifyProductCuantityInCart.feature"},
                  plugin = {"pretty", "html:target/cucumber-report.html", "json:target/cucumber.json"}, 
-                 tags = ("@VerifyProductQuantityInCart"), 
+                 tags = (""), 
                  //glue = {"step_definitions"},
                  monochrome = false, 
                  snippets = CAMELCASE
