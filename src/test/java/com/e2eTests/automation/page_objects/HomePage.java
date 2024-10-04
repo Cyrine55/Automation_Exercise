@@ -25,6 +25,8 @@ public class HomePage extends BasePage {
 	private static WebElement subscribBtn;
 	@FindBy(how = How.XPATH, using = "//*[@id=\"success-subscribe\"]/div")
 	private static WebElement successMsg;
+	@FindBy(how = How.CSS, using = "a[href='/product_details/5']")
+	private static WebElement viewProduct5;
 
 	public SeleniumUtils seleniumUtils;
 
@@ -53,10 +55,16 @@ public class HomePage extends BasePage {
 	public void clickOnCartBtn() {
 		seleniumUtils.click(cartBtn);
 	}
-public void clickArrow() {
-	seleniumUtils.click(subscribBtn);
-}
+
+	public void clickArrow() {
+		seleniumUtils.click(subscribBtn);
+	}
+
 	public String getSucessMsg() {
 		return successMsg.getText();
+	}
+	
+	public void clickOnProduct() {
+		seleniumUtils.click(viewProduct5);
 	}
 }
