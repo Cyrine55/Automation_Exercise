@@ -8,7 +8,7 @@ Feature: Verification du quantite de produit dans la page de carte
     And Verify that home page is visible successfully
     When Click on view 'View Product' for any product on home page
     Then Verify product detail is opened
-    When  Increase quantity to '4'
+    When Increase quantity to '4'
     And Click on add 'Add to cart' button
     And Click on view 'View Cart' button
-     Then Verify that product is displayed in cart page with exact quantity
+    Then Verify that product is displayed in cart page with exact quantity
