@@ -14,19 +14,19 @@ Feature: Register while checkout
     Then Verify that cart page is displayed
     When Click Proceed To Checkout
     When Click on register 'Register / Login' button
-    And Enter name "cyrine1"
-    And Enter email "yefrni.syrinetest2@gmail.com"
+    And Enter name "cycwaa"
+    And Enter email "yefrni.cycwaa@gmail.com"
     And Click on Signupbutton
     And Verify that info "ENTER ACCOUNT INFORMATION" is visible
     And Choose the title
     And Enter Name and Password
-      | name     | Cyrine1  |
-      | password | Yefrni51 |
+      | name     | cycwaa |
+      | password | Yefr1r |
     And Choose date of Birth
     And Check Sign up for our newsletter
     And Enter the address information
-      | First name | Yefrni1  |
-      | Last name  | cyrine2  |
+      | First name | cycwaa  |
+      | Last name  | cycwaa  |
       | Compagny   | Test1    |
       | Adress     | manouba1 |
       | Address2   | tunis1   |
@@ -37,14 +37,19 @@ Feature: Register while checkout
     And Enter the Mobile number
     And Click on Create Account
     And Verify that account "ACCOUNT CREATED!" is visible
-    Then Verify 'ACCOUNT CREATED!' and click 'Continue' button
-    Then Verify ' Logged in as cyrine2' at top
-    When Click 'Cart' button
-    When Click 'Proceed To Checkout' button
-    Then Verify Address Details and Review Your Order
+    And click on Continue button
+    Then Verify ' Logged in as cycwaa' at top
+    When Click on cartbtn 'Cart' button
+    When Click Proceed To Checkout
+    Then Verify message 'Address Details' and 'Review Your Order'
     When Enter description in comment text area and click 'Place Order'
-    When Enter payment details: Name on Card, Card Number, CVC, Expiration date
-    When Click 'Pay and Confirm Order' button
+    When Enter payment details
+      | NameOnCard | nameTest  |
+      | CardNumber  | 00123456  |
+      | CVC   | 555    |
+      | ExpirationMonth | 05|
+      | ExpirationYear | 2147|
+    When Click pay 'Pay and Confirm Order' button
     Then Verify success message 'Your order has been placed successfully!'
     When Click delete 'Delete Account' button
     Then Verify that deleted "ACCOUNT DELETED!" is visible 
