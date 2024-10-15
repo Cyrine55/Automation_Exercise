@@ -22,6 +22,13 @@ public class PaymentPage extends BasePage{
 	@FindBy(how = How.XPATH, using = "//input[@placeholder='YYYY']")
 	private static WebElement expirationYearField;
 	
+	@FindBy(how = How.XPATH, using = "//a[normalize-space()='Delete Account']")
+	private static WebElement deleteBtn;
+	@FindBy(how = How.XPATH, using = "//b[normalize-space()='Account Deleted!']")
+	private static WebElement deleteMsg;
+	
+	@FindBy(how = How.XPATH, using = "//a[normalize-space()='Continue']")
+	private static WebElement continueBTN;
 SeleniumUtils seleniumUtils;
 	public PaymentPage() {
 		super(Setup.getDriver());
@@ -35,5 +42,17 @@ SeleniumUtils seleniumUtils;
 		seleniumUtils.writeText(cvcField, cvcText);
 		seleniumUtils.writeText(expirationMonthField, expirationMonthText);
 		seleniumUtils.writeText(expirationYearField, expirationYearText);
+	}
+	
+	public void clickOnDeleteBtn() {
+		seleniumUtils.click(deleteBtn);
+	}
+	
+	public String verifySuccessDelete() {
+		String actualDeleteMsg=deleteMsg.getText();
+		return actualDeleteMsg;
+	}
+	public void clickContinue() {
+		seleniumUtils.click(continueBTN);
 	}
 }

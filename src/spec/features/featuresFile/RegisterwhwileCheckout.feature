@@ -52,5 +52,5 @@ Feature: Register while checkout
     When Click pay 'Pay and Confirm Order' button
     Then Verify success message 'Your order has been placed successfully!'
     When Click delete 'Delete Account' button
-    Then Verify that deleted "ACCOUNT DELETED!" is visible 
-    When  click 'Continue' button
+    Then Verify that deletedd "ACCOUNT DELETED!" is visible 
+    When  clicks 'Continue' button

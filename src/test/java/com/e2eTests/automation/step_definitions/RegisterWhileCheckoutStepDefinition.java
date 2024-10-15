@@ -22,7 +22,7 @@ public class RegisterWhileCheckoutStepDefinition {
 	public RegisterWhileCheckoutStepDefinition() {
 		cartPage = new CartPage();
 		homePage = new HomePage();
-		paymentPage =  new PaymentPage();
+		paymentPage = new PaymentPage();
 	}
 
 	@Then("Verify that cart page is displayed")
@@ -77,14 +77,16 @@ public class RegisterWhileCheckoutStepDefinition {
 	@When("Enter payment details")
 	public void enterPaymentDetails(DataTable dataTablePaymentDetails) {
 		Map<String, String> dataMap = dataTablePaymentDetails.asMap(String.class, String.class);
-		paymentPage.enterPaymentDetails(dataMap.get("NameOnCard"), dataMap.get("CardNumber"), dataMap.get("CVC"), dataMap.get("ExpirationMonth"), dataMap.get("ExpirationYear"));
+		paymentPage.enterPaymentDetails(dataMap.get("NameOnCard"), dataMap.get("CardNumber"), dataMap.get("CVC"),
+				dataMap.get("ExpirationMonth"), dataMap.get("ExpirationYear"));
 
 	}
+
 	@When("Click pay {string} button")
 	public void clickPayButton(String string) {
 		cartPage.clickPayConfirmBtn();
 	}
-	
+
 	@Then("Verify success message {string}")
 	public void verifySuccessMessage(String string) {
 
@@ -92,7 +94,7 @@ public class RegisterWhileCheckoutStepDefinition {
 
 	@When("Click delete {string} button")
 	public void clickDeleteButton(String string) {
-
+		paymentPage.clickOnDeleteBtn();
 	}
 
 	@When("click {string} button")
@@ -100,4 +102,13 @@ public class RegisterWhileCheckoutStepDefinition {
 		cartPage.clickProceedCheckoutBtn();
 	}
 
+	@Then("Verify that deletedd {string} is visible")
+	public void verifyThatDeleteddIsVisible(String deleteMsg) {
+		Assert.assertEquals(paymentPage.verifySuccessDelete(), deleteMsg);
+	}
+
+	@When("clicks {string} button")
+	public void clicksButton(String string) {
+		paymentPage.clickContinue();
+	}
 }
