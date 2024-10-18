@@ -18,7 +18,9 @@ public class RegisterUserPage extends BasePage {
 	private static WebElement enterAccountInfoText;
 
 	@FindBy(how = How.ID, using = "id_gender2")
-	private static WebElement titleRadio;
+	private static WebElement titleRadioMrs;
+	@FindBy(how = How.ID, using = "id_gender1")
+	private static WebElement titlegenderMr;
 
 	@FindBy(how = How.ID, using = "name")
 	private static WebElement nameField;
@@ -89,8 +91,8 @@ public class RegisterUserPage extends BasePage {
 		return seleniumUtils.readText(enterAccountInfoText);
 	}
 
-	public void chooseTitle() {
-		seleniumUtils.click(titleRadio);
+	public void chooseTitleMrs() {
+		seleniumUtils.click(titleRadioMrs);
 	}
 
 	public void enterName(String nameText) {
@@ -128,16 +130,66 @@ public class RegisterUserPage extends BasePage {
 		seleniumUtils.writeText(city, cityText);
 		seleniumUtils.writeText(zipcode, zipcodeText);
 	}
-	
+
 	public void chooseCountry() {
 		seleniumUtils.click(countrySelect);
 	}
+
 	public void enterPhone() {
 		seleniumUtils.writeText(mobileNumber, "25547126");
 	}
-	
+
 	public void createAccount() {
 		seleniumUtils.click(createAccountBtn);
 	}
+
+	public void chooseGenderMr() {
+		seleniumUtils.click(titlegenderMr);
+	}
+
+	public void outlineWriteName(String outlineName) {
+		seleniumUtils.writeText(nameField, outlineName);
+	}
+
+	public void outlineWriteZipcode(int zipcodeText) {
+		zipcode.sendKeys(String.valueOf(zipcodeText));
+	}
+	
+	public void outlineWritePassword(int passwordText) {
+		passwordField.sendKeys(String.valueOf(passwordText));
+	}
+	public void outlineWriteFirstName(String outlineFirstName) {
+		seleniumUtils.writeText(firstName, outlineFirstName);
+	}
+	
+	public void outlineWriteLastName(String outlineLastName) {
+		seleniumUtils.writeText(lastName, outlineLastName);
+		
+	}
+	
+	public void outlineWriteCompagnyName(String compagnNameText) {
+		seleniumUtils.writeText(compagny, compagnNameText);
+		
+	}
+	
+	public void outlineAdress(String adressText) {
+		seleniumUtils.writeText(address, adressText);
+	}
+	
+	public void outlineAdress2(String adressText2) {
+		seleniumUtils.writeText(address2, adressText2);
+	}
+	
+	public void outlineState(String stateText) {
+		seleniumUtils.writeText(stateField, stateText);
+	}
+	
+	public void outlinecity(String cityText) {
+		seleniumUtils.writeText(city, cityText);	
+	}
+	
+	
+	
+	
 	
 }

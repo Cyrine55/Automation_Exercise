@@ -83,7 +83,7 @@ public class RegisterUserStepDefinition {
 
 	@Then("Choose the title")
 	public void chooseTheTitle() {
-		registerUserPage.chooseTitle();
+		registerUserPage.chooseTitleMrs();
 	}
 
 	@Then("Enter Name and Password")
