@@ -7,8 +7,8 @@ Feature: Register while checkout
     Given User navigates to the application
     And Verify that home page is visible successfully
     Then Click on Signup button
-    And Enter name "cyrinetest"
-    And Enter email "yefrni.scyrinetest@gmail.com"
+    And Enter name "cyrdinetest"
+    And Enter email "yefrni.scyfrinetest@gmail.com"
     And Click on Signupbutton
     When Choose the title gender "<gendertitle>"
     When User writes Name "<Name>"
@@ -52,4 +52,4 @@ Feature: Register while checkout
 
     Examples: 
       | gendertitle | Name       | Password | FirstName    | LastName     | Compagny     | Adress     | Adress2     | State     | City     | Zipcode |
-      | Mr    | cyrinetest | 0000 | Firsnametest | LastNametest | Compagnytest | Adresstest | Adress2test | Statetest | Citytest |  123654 |
+      | Mr    | cyrdinetest | 0000 | Firsndametest | LastNdametest | Compdagnytest | Adresdstest | Address2test | dStatetest | Cidtytest |  123654 |
