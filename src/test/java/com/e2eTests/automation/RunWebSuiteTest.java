@@ -18,7 +18,7 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions(features = {"src/spec/features"},
                  plugin = {"pretty", "html:target/cucumber-report.html", "json:target/cucumber.json"}, 
-                 tags = ("@RemoveProduct-From-Cart"), 
+                 tags = ("@ViewCategoryProducts"), 
                  //glue = {"step_definitions"},
                  monochrome = false, 
                  snippets = CAMELCASE
