@@ -221,4 +221,5 @@ public class Validations extends BasePage {
    	Assert.assertEquals(URL, expectedURL);
    }
 
+   
 }

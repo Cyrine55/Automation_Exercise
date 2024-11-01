@@ -32,8 +32,12 @@ public class ProductPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//b[normalize-space()='Brand:']")
 	private static WebElement detailBrand;
 	
-	
-	
+	@FindBy(how = How.XPATH, using = "//h2[normalize-space()='Brands']")
+	private static WebElement BrandsMenuText;
+	@FindBy(how = How.XPATH, using = "//a[@href='/brand_products/Babyhug']")
+	private static WebElement babyBrandMenu;
+	@FindBy(how = How.XPATH, using = "//a[@href='/brand_products/Madame']")
+	private static WebElement madameBrandMenu;
 	
 	public SeleniumUtils seleniumUtils;
 
@@ -89,11 +93,23 @@ public class ProductPage extends BasePage {
 	}
 	
 	
+	public String VerifyBrandVisible() {
+		String ActualBrandMenuText= seleniumUtils.readText(BrandsMenuText);
+		return ActualBrandMenuText;
+		
+	}
 	
+	public void clickOnBabyhugBrand() {
+		seleniumUtils.click(babyBrandMenu);
+	}
 	
+	/*public boolean urlContainsBabyBrand() {
+		return driver.getCurrentUrl().contains("brand_products/Babyhug()");
+	}*/
 	
-	
-	
+	public void clickMadameBrand() {
+		seleniumUtils.click(madameBrandMenu);  
+	   }
 	
 	
 	
