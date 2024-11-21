@@ -22,9 +22,9 @@ public class VerifyCartBrandProductStepDefinition {
 
 	@Then("Verify that Brands are visible on left side bar")
 	public void verifyThatBrandsAreVisibleOnLeftSideBar() {
-		String ActualBrandMenuText = productPage.VerifyBrandVisible();
-		String ExpectedBrandMenuText = "BRANDS";
-		Assert.assertEquals(ActualBrandMenuText, ExpectedBrandMenuText);
+		String actualBrandMenuText = productPage.VerifyBrandVisible();
+		String expectedBrandMenuText = "BRANDS";
+		Assert.assertEquals(actualBrandMenuText, expectedBrandMenuText);
 	}
 
 	@When("Click on {string} brand name")
@@ -54,8 +54,8 @@ public class VerifyCartBrandProductStepDefinition {
 
 	@Then("Verify User navigate on Madame brand")
 	public void verifyUserNavigateOnMadameBrand() {
-		String ExpectedMadameContainUrl = "https://automationexercise.com/brand_products/Madame";
-		validations.checkChangedURL(ExpectedMadameContainUrl);
+		String expectedMadameContainUrl = "https://automationexercise.com/brand_products/Madame";
+		validations.checkChangedURL(expectedMadameContainUrl);
 	}
 
 }

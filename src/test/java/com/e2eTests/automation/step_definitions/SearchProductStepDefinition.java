@@ -23,6 +23,7 @@ public class SearchProductStepDefinition {
 	@When("Click search button")
 	public void clickSearchButton() {
 		searchProductPage.clickSearchBtn();  
+	
 	}
 	@Then("Verify {string} message is visible")
 	public void verifyMessageIsVisible(String ExpectedSearchedText) {

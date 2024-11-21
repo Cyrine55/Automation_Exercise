@@ -16,7 +16,7 @@ public class ProductDetailPage extends BasePage {
 	private static WebElement titleProduct;
 	@FindBy(how = How.ID, using = "quantity")
 	private static WebElement inputQuntity;
-	@FindBy(how = How.XPATH, using = "//button[normalize-space()='Add to cart']")
+	@FindBy(how = How.CLASS_NAME, using = "add-to-cart")
 	private static WebElement addCartBtn;
 	@FindBy(how = How.XPATH, using = "//u[normalize-space()='View Cart']")
 	private static WebElement viewCartBtn;

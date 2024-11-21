@@ -14,6 +14,7 @@ import org.junit.Assert;
 import com.e2eTests.automation.utils.BasePage;
 import com.e2eTests.automation.utils.SeleniumUtils;
 import com.e2eTests.automation.utils.Setup;
+import com.e2eTests.automation.utils.Wait;
 
 public class SearchProductPage extends BasePage {
 
@@ -27,10 +28,12 @@ public class SearchProductPage extends BasePage {
 	private static WebElement productsBloc;
 
 	SeleniumUtils seleniumUtils;
+	Wait waitclass;
 
 	public SearchProductPage() {
 		super(Setup.getDriver());
 		seleniumUtils = new SeleniumUtils();
+		waitclass = new Wait(driver);
 	}
 
 	public void enterProductText(String productname) {
@@ -39,14 +42,16 @@ public class SearchProductPage extends BasePage {
 
 	public void clickSearchBtn() {
 		seleniumUtils.click(submitSearchBtn);
+
 	}
 
 	public String getSearchedProducts() {
+		waitclass.waitUntilElementVisible(driver, searchedPdtText);
 		return searchedPdtText.getText();
 	}
 
 	public void getListProductSearched(String productname) {
-		List<WebElement> listeproductelements = productsBloc.findElements(By.className("product-image-wrapper"));
+		List<WebElement> listeproductelements = productsBloc.findElements(By.className("product-details"));
 		int size = 0;
 		for (WebElement listproduct : listeproductelements) {
 

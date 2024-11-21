@@ -226,7 +226,10 @@ public class SeleniumUtils extends BasePage {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
-
+	public void waitForElementToInvisible(WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.invisibilityOf((WebElement) element));
+	}
 	/**
 	 * method to clear field. 
 	 *
@@ -607,6 +610,10 @@ public class SeleniumUtils extends BasePage {
 		    }
 		}
 		
-		
+		public static void scrollIntoElement(WebElement locator) {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].scrollIntoView(true);", locator);	
+			
+		}
 		
 	}

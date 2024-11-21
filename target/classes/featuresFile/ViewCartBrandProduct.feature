@@ -9,7 +9,7 @@ Feature: View and Cart Brand Products
   Then Verify that Brands are visible on left side bar
   When Click on 'BABYHUG' brand name
   Then Verify User navigate on Babyhug brand
-  And Verify Baby confirm text 'Brand - Babyhug Products' is displayed
+  And Verify Baby confirm text 'BRAND - BABYHUG PRODUCTS' is displayed
   When Click on any brand 'MADAME'
   Then Verify User navigate on Madame brand
   
