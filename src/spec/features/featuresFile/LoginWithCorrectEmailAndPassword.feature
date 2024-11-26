@@ -10,6 +10,6 @@ Feature: Authentification valide
     Then Verify the login 'Login to your account' is visible
     When Enter correct email address and password
     And Click on 'login' button
-    And Verify that username "Logged in as Cyrine" is visible
+    And Verify that username "Logged in as cycy1" is visible
     And Click 'Delete Account' button
     Then Verify that deleted "ACCOUNT DELETED!" is visible

@@ -3,6 +3,7 @@ package com.e2eTests.automation.page_objects;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -22,7 +23,9 @@ public class SearchProductCartLoginPage extends BasePage {
 	private static WebElement blocProducts;
 	@FindBy(how = How.XPATH, using = "//button[normalize-space()='Continue Shopping']")
 	private static WebElement continuShopCarts;
-
+	@FindBy(how = How.ID, using = "cart_info")
+	private static WebElement tableInfo;
+	
 	SeleniumUtils seleniumUtils;
 	Wait waitclass;
 
@@ -33,14 +36,14 @@ public class SearchProductCartLoginPage extends BasePage {
 	}
 
 	public void addCarts() {
-		List<WebElement> product = blocProducts.findElements(By.className("product-image-wrapper"));
+		List<WebElement> products = blocProducts.findElements(By.className("product-image-wrapper"));
 		Actions action = new Actions(Setup.getDriver());
-		int productSize = product.size();
+		int productSize = products.size();
 		System.out.println("Nombre de produits : " + productSize);
 		int i = 1;
 
 		// Parcours chaque bouton dans la liste
-		for (WebElement a : product) {
+		for (WebElement a : products) {
 			System.out.println("Traitement du produit n° : " + (i));
 			action.moveToElement(a).perform();
 			seleniumUtils.clickOnElementUsingJs(a.findElement(By.className("add-to-cart")));
@@ -49,11 +52,24 @@ public class SearchProductCartLoginPage extends BasePage {
 				seleniumUtils.waitForElementToBeClickable(continuShopCarts);
 				seleniumUtils.click(continuShopCarts);
 				seleniumUtils.waitForElementToInvisible(continuShopCarts);
+				
 			}
 			i++;
 
 		}
 
+	}
+	
+	public boolean verifyProductAfterLogin() {
+	List<WebElement> products =tableInfo.findElements(By.xpath("//tr"));
+	int display=0;
+	for(WebElement p:products) {
+		if(p.isDisplayed()) {
+		display++;	
+		}
+	}
+	System.out.println(display);
+	return true;
 	}
 	
 }

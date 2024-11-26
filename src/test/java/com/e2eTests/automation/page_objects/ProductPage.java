@@ -39,8 +39,9 @@ public class ProductPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//a[@href='/brand_products/Madame']")
 	private static WebElement madameBrandMenu;
 	
+	
+	
 	public SeleniumUtils seleniumUtils;
-
 	public ProductPage() {
 		super(Setup.getDriver());
 		seleniumUtils = new SeleniumUtils();

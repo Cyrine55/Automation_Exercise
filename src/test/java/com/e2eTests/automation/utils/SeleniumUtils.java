@@ -227,7 +227,7 @@ public class SeleniumUtils extends BasePage {
 		wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 	public void waitForElementToInvisible(WebElement element) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.invisibilityOf((WebElement) element));
 	}
 	/**

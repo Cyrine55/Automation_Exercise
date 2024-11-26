@@ -64,7 +64,7 @@ public class LoginPage extends BasePage{
 	public String getVerifyAccountText() {
 		return seleniumUtils.readText(loginToAccountText);
 	}
-	String adresseMail = "yefrni.syrinetest@gmail.com";
+	String adresseMail = "cycy1.syrinetest@gmail.com";
 	String password = "Yefrni5";
 	public void enterEmailAdress() {
 		seleniumUtils.writeText(emailadressInput,adresseMail);	

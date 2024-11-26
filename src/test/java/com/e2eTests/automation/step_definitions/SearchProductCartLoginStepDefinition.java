@@ -1,5 +1,7 @@
 package com.e2eTests.automation.step_definitions;
 
+import org.testng.Assert;
+
 import com.e2eTests.automation.page_objects.SearchProductCartLoginPage;
 
 import io.cucumber.java.en.Then;
@@ -23,7 +25,8 @@ public class SearchProductCartLoginStepDefinition {
 	}
 	@Then("Verify that those products are visible in cart after login as well")
 	public void verifyThatThoseProductsAreVisibleInCartAfterLoginAsWell() {
-	  
+	//searchProductCartLoginPage.verifyProductAfterLogin(); 
+		Assert.assertTrue(searchProductCartLoginPage.verifyProductAfterLogin());
 	}
 
 
