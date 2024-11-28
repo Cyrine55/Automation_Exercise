@@ -1,6 +1,5 @@
 package com.e2eTests.automation.step_definitions;
 
-import static org.testng.Assert.assertTrue;
 
 import java.util.Map;
 
@@ -26,7 +25,9 @@ public class RegisterUserStepDefinition {
 	public Validations validations;
 	public RegisterUserPage registerUserPage;
 	public ConfigFileReader configFileReader;
-
+	
+	public static String  expectedAdress1;
+	public static String  expectedAdress2;
 	public RegisterUserStepDefinition() {
 		homePage = new HomePage();
 		loginPage = new LoginPage();
@@ -112,7 +113,19 @@ public class RegisterUserStepDefinition {
 		registerUserPage.entrerAdressInfo(dataMap.get("First name"), dataMap.get("Last name"), dataMap.get("Compagny"),
 				dataMap.get("Adress"), dataMap.get("Address2"), dataMap.get("State"), dataMap.get("city"),
 				dataMap.get("zip code"));
+		
+		expectedAdress1=dataMap.get("Adress");
+		expectedAdress2=dataMap.get("Address2");
+		System.out.println("Expected Address 1: " + expectedAdress1);
+		System.out.println("Expected Address 2: " + expectedAdress2);
 
+	}
+	
+	public String getExpectedAdress1() {
+		return expectedAdress1;
+	}
+	public String getExpectedAdress2() {
+		return expectedAdress2;
 	}
 
 	@Then("Choose the country")
@@ -152,7 +165,7 @@ Assert.assertEquals(actualUsername,usertaccountMsg);
 
 	@Then("Click Delete Account button")
 	public void clickDeleteAccountButton() {
-accountCreatePage.clickDeleteAccount();
+    accountCreatePage.clickDeleteAccount();
 	}
 
 	@Then("Verify that deleted {string} is visible")

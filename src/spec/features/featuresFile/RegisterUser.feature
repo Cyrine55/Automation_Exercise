@@ -33,6 +33,6 @@ Feature: Register user
     And Verify that account "ACCOUNT CREATED!" is visible
     And click on Continue button
     And Verify that username "Logged in as cycy1" is visible
-    #And Click Delete Account button
-    #Then Verify that deleted "ACCOUNT DELETED!" is visible
+    And Click Delete Account button
+    Then Verify that deleted "ACCOUNT DELETED!" is visible
     
