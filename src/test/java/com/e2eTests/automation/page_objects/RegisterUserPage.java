@@ -14,7 +14,7 @@ import io.cucumber.datatable.DataTable;
 public class RegisterUserPage extends BasePage {
 	/* Retrieve element */
 
-	@FindBy(how = How.XPATH, using = "//b[normalize-space()='Enter Account Information']")
+	@FindBy(how = How.XPATH, using = "//b[contains(text(),'Enter Account Information')]")
 	private static WebElement enterAccountInfoText;
 
 	@FindBy(how = How.ID, using = "id_gender2")

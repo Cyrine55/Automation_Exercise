@@ -14,19 +14,19 @@ Feature: Register while checkout
     Then Verify that cart page is displayed
     When Click Proceed To Checkout
     When Click on register 'Register / Login' button
-    And Enter name "cycwaaa"
-    And Enter email "yefrni.cycwaaa@gmail.com"
+    And Enter name "cycwaaaa"
+    And Enter email "yefrni.cycwaaaa@gmail.com"
     And Click on Signupbutton
     And Verify that info "ENTER ACCOUNT INFORMATION" is visible
     And Choose the title
     And Enter Name and Password
-      | name     | cycwaaa |
+      | name     | cycwaaaa |
       | password | Yefr1r |
     And Choose date of Birth
     And Check Sign up for our newsletter
     And Enter the address information
-      | First name | cycwaaa  |
-      | Last name  | cycwaaa  |
+      | First name | cycwaaaa  |
+      | Last name  | cycwaaaa  |
       | Compagny   | Test1    |
       | Adress     | manouba1 |
       | Address2   | tunis1   |
@@ -38,7 +38,7 @@ Feature: Register while checkout
     And Click on Create Account
     And Verify that account "ACCOUNT CREATED!" is visible
     And click on Continue button
-    Then Verify ' Logged in as cycwaaa' at top
+    Then Verify ' Logged in as cycwaaaa' at top
     When Click on cartbtn 'Cart' button
     When Click Proceed To Checkout
     Then Verify message 'Address Details' and 'Review Your Order'
@@ -53,4 +53,4 @@ Feature: Register while checkout
     Then Verify success message 'Your order has been placed successfully!'
     When Click delete 'Delete Account' button
     Then Verify that deletedd "ACCOUNT DELETED!" is visible 
-    When  clicks 'Continue' button
+  When  clicks 'Continue' button

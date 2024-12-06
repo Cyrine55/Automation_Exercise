@@ -1,5 +1,7 @@
 package com.e2eTests.automation.page_objects;
 
+import java.io.File;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,6 +31,10 @@ public class PaymentPage extends BasePage{
 	
 	@FindBy(how = How.XPATH, using = "//a[normalize-space()='Continue']")
 	private static WebElement continueBTN;
+	
+	@FindBy(how = How.LINK_TEXT, using = "Download Invoice")
+	private static WebElement downloadInvoiceBtn;
+	
 SeleniumUtils seleniumUtils;
 	public PaymentPage() {
 		super(Setup.getDriver());
@@ -54,5 +60,15 @@ SeleniumUtils seleniumUtils;
 	}
 	public void clickContinue() {
 		seleniumUtils.click(continueBTN);
+	}
+	
+	public void clickDownloadInvoice() {
+		seleniumUtils.click(downloadInvoiceBtn);
+	}
+	
+	public boolean verifyDownlodedInvoice() {
+		 String downloadDir = "C:\\Users\\Cyrine\\Downloads";
+		 File downloadedFile = new File(downloadDir + "\\invoice.txt");
+		 return downloadedFile.exists();
 	}
 }
