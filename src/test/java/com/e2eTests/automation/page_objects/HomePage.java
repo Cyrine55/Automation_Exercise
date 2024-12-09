@@ -27,7 +27,14 @@ public class HomePage extends BasePage {
 	private static WebElement successMsg;
 	@FindBy(how = How.CSS, using = "a[href='/product_details/5']")
 	private static WebElement viewProduct5;
-
+	
+	@FindBy(how = How.XPATH, using = "//h2[normalize-space()='Subscription']")
+	private static WebElement subscriptionText;
+	@FindBy(how = How.XPATH, using = "//i[@class='fa fa-angle-up']")
+	private static WebElement arrowBtn;
+	@FindBy(how = How.XPATH, using = "//h2[contains(text(),'Full-Fledged practice website for Automation Engin')]")
+	private static WebElement textAferscrollUp;
+	
 	public SeleniumUtils seleniumUtils;
 
 	public HomePage() {
@@ -67,4 +74,21 @@ public class HomePage extends BasePage {
 	public void clickOnProduct() {
 		seleniumUtils.click(viewProduct5);
 	}
+	
+	public void scrollIntoBottom() {
+		JavascriptExecutor js=(JavascriptExecutor) Setup.getDriver();
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+	}
+	
+	public String getSubscriptionText() {
+		return subscriptionText.getText();
+		
+	}
+	public void clickArrowBtn() {
+		seleniumUtils.click(arrowBtn);	
+	}
+	public String getText() {
+		return textAferscrollUp.getText();
+	}
+	
 }

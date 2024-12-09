@@ -55,4 +55,4 @@ Feature: Download Invoice After Purchase Order
     When Click on continue btn
     When Click delete 'Delete Account' button
     Then Verify that deletedd "ACCOUNT DELETED!" is visible
-    #When clicks 'Continue' button
+    When clicks 'Continue' button
